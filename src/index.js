@@ -62,9 +62,13 @@ app.use(
   })),
 );
 
+app.get('/',(req, res) =>{
+  res.json({
+    msg:"Hola mundo"
+  })
+})
+
 app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
-app.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+app.listen( process.env.PORT || 4000 )
 
 console.log(`🚀 Server ready at http://localhost:${process.env.PORT || 4000}/playground`);
