@@ -63,6 +63,6 @@ app.use(
 );
 
 app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
 
-console.log(`🚀 Server ready at http://localhost:4000/playground`);
+console.log(`🚀 Server ready at http://localhost:${process.env.PORT || 4000}/playground`);
